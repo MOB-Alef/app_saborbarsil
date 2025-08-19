@@ -1,40 +1,58 @@
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { loginStyles as styles } from "../../styles/styles";
 
-import { Stack } from "expo-router";
+export default function Login() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [opcao, setOpcao] = useState("login");
 
-export default function RootLayout() {
+  const handleEnviar = () => {
+    if (opcao === "pular") {
+      router.replace("/tabs");
+      return;
+    }
+    if (!email || !senha) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+    router.replace("/tabs");
+  };
+
   return (
-    <Stack>
-      {/* A tela (tabs) é a sua tela principal com a navegação por abas */}
-      <Stack.Screen 
-        name="tabs" 
-        options={{ headerShown: false }}
-      />
-      
-      {/* A tela de login */}
-      <Stack.Screen 
-        name="auth/login" 
-        options={{ 
-          title: "Login",
-          headerShown: false,
-        }} 
-      />
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Login</Text>
 
-      {/* --- ADICIONE ESTA PARTE --- */}
-      {/* A nova tela de registro */}
-      <Stack.Screen 
-        name="auth/register" 
-        options={{ 
-          title: "Registro",
-          headerShown: false, // Também sem cabeçalho
-        }} 
-      />
-      {/* --- FIM DA ADIÇÃO --- */}
+        {opcao === "login" && (
+          <>
+            <Text style={styles.label}>Email</Text>
+            <TextInput style={styles.input} placeholder="example@example.com" value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" />
 
-      {/* A tela de splash é a primeira a ser vista */}
-      <Stack.Screen 
-        name="splash" 
-        options={{ headerShown: false }}
-      />
-    </Stack>
+            <Text style={styles.label}>Senha</Text>
+            <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry value={senha} onChangeText={setSenha} />
+          </>
+        )}
+
+        <View style={styles.optionsContainer}>
+          <TouchableOpacity onPress={() => setOpcao("pular")}>
+            <Text style={opcao === "pular" ? styles.optionSelected : styles.option}>● Entrar sem login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setOpcao("login")}>
+            <Text style={opcao === "login" ? styles.optionSelected : styles.option}>● Quero fazer login</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity style={styles.button} onPress={handleEnviar}>
+          <Text style={styles.buttonText}>Enviar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => router.push("/auth/register")}>
+          <Text style={styles.option}>Não tem conta? Cadastre-se</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 }
