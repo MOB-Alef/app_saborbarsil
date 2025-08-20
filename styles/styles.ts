@@ -1,4 +1,3 @@
-// styles/styles.ts
 import { StyleSheet } from "react-native";
 
 export const COLORS = {
@@ -11,6 +10,7 @@ export const COLORS = {
   marromAvermelhado: "#8c3b00",
   cinzaClaro: "#8a8a8a",
   verde: "#67c64a",
+  azulPetroleo: "#457B9D",
   inputBackground: "#FFFFFF",
 };
 
@@ -42,6 +42,25 @@ export const splashStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  // --- CORREÇÃO APLICADA AQUI ---
+  // Adicionei os estilos do botão circular diretamente aqui
+  circleButton: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: COLORS.cinzaEscuro,
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: COLORS.preto,
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  circleButtonText: {
+    fontSize: 28,
+    color: COLORS.branco,
+  },
 });
 
 // --------------------
@@ -60,7 +79,7 @@ export const loginStyles = StyleSheet.create({
 });
 
 // --------------------
-// Páginas de Categorias
+// Página de Categorias
 // --------------------
 export const categoryPageStyles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.branco, padding: 20 },
@@ -71,10 +90,44 @@ export const categoryPageStyles = StyleSheet.create({
 });
 
 // --------------------
+// Estilo para Receitas (Cards)
+// --------------------
+export const recipeCardStyles = StyleSheet.create({
+  card: {
+    backgroundColor: "#f9f9f9",
+    borderRadius: 12,
+    marginBottom: 16,
+    overflow: "hidden",
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+  },
+  imagem: {
+    width: "100%",
+    height: 180,
+  },
+  conteudo: {
+    padding: 12,
+  },
+  nome: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 6,
+    color: COLORS.preto,
+  },
+  descricao: {
+    fontSize: 14,
+    color: COLORS.cinzaEscuro,
+  },
+});
+
+// --------------------
 // Telas das abas (Início / Categorias / Favoritos)
 // --------------------
 export const tabScreenStyles = StyleSheet.create({
-  container: { flex: 1,backgroundColor: COLORS.branco, padding: 20 },
+  container: { flex: 1, backgroundColor: COLORS.branco, padding: 20 },
   buttonContainer: { gap: 15 },
 });
 
@@ -102,4 +155,58 @@ export const categoryButtonStyles = StyleSheet.create({
     borderRadius: 25,
   },
   title: { color: COLORS.preto, fontSize: 18, fontWeight: "bold" },
+});
+
+// --------------------
+// Carrossel de Destaques (Home)
+// --------------------
+export const carouselStyles = StyleSheet.create({
+  container: { height: 250, marginBottom: 20 },
+  slide: { flex: 1, justifyContent: "center", alignItems: "center" },
+  image: { width: "100%", height: 250, borderRadius: 12 },
+  overlay: {
+    position: "absolute",
+    bottom: 20,
+    left: 20,
+    right: 20,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    padding: 12,
+    borderRadius: 8,
+  },
+  titulo: { color: COLORS.branco, fontSize: 18, fontWeight: "bold", marginBottom: 4 },
+  descricao: { color: COLORS.branco, fontSize: 14 },
+  dot: { backgroundColor: "rgba(255,255,255,0.3)", width: 8, height: 8, borderRadius: 4, margin: 3 },
+  activeDot: { backgroundColor: COLORS.branco, width: 10, height: 10, borderRadius: 5, margin: 3 },
+});
+
+
+// --------------------
+// Estilos de Modal
+// --------------------
+export const modalStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  content: {
+    backgroundColor: COLORS.branco,
+    padding: 20,
+    borderRadius: 12,
+    width: 250,
+    alignItems: "center",
+  },
+  optionButton: {
+    padding: 12,
+    marginVertical: 8,
+    borderRadius: 8,
+    backgroundColor: COLORS.azulPetroleo,
+    width: "100%",
+    alignItems: "center",
+  },
+  optionText: {
+    color: COLORS.branco,
+    fontSize: 16,
+  },
 });

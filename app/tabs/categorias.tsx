@@ -16,7 +16,7 @@ export default function Categorias() {
         />
         <CategoryButton
           title="Pratos Principais"
-          image={require("../../assets/images/pratos_principais/pizza.jpg")}
+          image={require("../../assets/images/img_pratos_principais/pizza.jpg")}
           onPress={() => router.push("/screens/pratosprincipais")}
         />
         <CategoryButton

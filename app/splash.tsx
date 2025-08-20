@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
-import { splashStyles as styles } from "..//styles/styles";
+import { splashStyles as styles  } from "..//styles/styles";
 
 export default function Splash() {
   const router = useRouter();
@@ -9,7 +9,7 @@ export default function Splash() {
   useEffect(() => {
     const timer = setTimeout(() => router.replace("/"), 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   return (
     <View style={styles.container}>

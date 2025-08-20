@@ -10,9 +10,9 @@ export default function PratosPrincipais() {
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Pratos Principais</Text>
       <View style={styles.buttonContainer}>
-        <CategoryButton title="Feijoada" image={require("../../assets/images/pratos_principais/feijoada.png")} onPress={() => {}} />
-        <CategoryButton title="Moqueca" image={require("../../assets/images/pratos_principais/moqueca.png")} onPress={() => {}} />
-        <CategoryButton title="Churrasco" image={require("../../assets/images/pratos_principais/churrasco.png")} onPress={() => {}} />
+        <CategoryButton title="Feijoada" image={require("../../assets/images/img_pratos_principais/feijoada.png")} onPress={() => {}} />
+        <CategoryButton title="Moqueca" image={require("../../assets/images/img_pratos_principais/moqueca.png")} onPress={() => {}} />
+        <CategoryButton title="Churrasco" image={require("../../assets/images/img_pratos_principais/churrasco.png")} onPress={() => {}} />
       </View>
 
       <TouchableOpacity style={styles.backButton} onPress={() => router.push("/tabs/categorias")}>
