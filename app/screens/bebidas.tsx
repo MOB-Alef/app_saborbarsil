@@ -1,28 +1,48 @@
-import { ScrollView, Text, View, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import CategoryButton from "../../components/CategoryButton";
-import { categoryPageStyles as styles } from "../../styles/styles";
+import { categoryPageStyles, recipeCardStyles } from "../../styles/styles";
 
-export default function Bebidas() {
+export default function ReceitasBebidas() {
   const router = useRouter();
 
-  return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Bebidas</Text>
-      <View style={styles.buttonContainer}>
-        <CategoryButton title="Café" image={require("../../assets/images/img_bebidas/cafe.jpg")} onPress={() => {}} />
-        <CategoryButton title="Suco Abacaxi" image={require("../../assets/images/img_bebidas/suco_abacaxi.jpg")} onPress={() => {}} />
-        <CategoryButton title="Suco Maracujá" image={require("../../assets/images/img_bebidas/suco_maracuja.png")} onPress={() => {}} />
-        <CategoryButton title="Vitaminada Banana" image={require("../../assets/images/img_bebidas/vitaminada_banana.jpg")} onPress={() => {}} />
-      </View>
+  const receitas = [
+    {
+      id: "caipirinha",
+      nome: "Caipirinha",
+      imagem: require("../../assets/images/img_telas/comidas/Caipirinha.jpg"),
+      descricao: "Bebida típica do Brasil feita com limão e cachaça.",
+    },
+    {
+      id: "suco_acai",
+      nome: "Suco de Açaí",
+      imagem: require("../../assets/images/img_telas/comidas/Suco_de_Açaí.jpg"),
+      descricao: "Refrescante e energético, típico da região amazônica.",
+    },
+    {
+      id: "cafe",
+      nome: "Café Brasileiro",
+      imagem: require("../../assets/images/img_telas/comidas/Café_Brasileiro.jpg"),
+      descricao: "Forte e encorpado, conhecido mundialmente.",
+    },
+  ];
 
-      <TouchableOpacity style={styles.backButton} onPress={() => router.push("/tabs/categorias")}>
-        <Text style={styles.backButtonText}>Voltar para Categorias</Text>
-      </TouchableOpacity>
+  return (
+    <ScrollView style={categoryPageStyles.container}>
+      <Text style={categoryPageStyles.title}>🥤 Bebidas</Text>
+      {receitas.map((item) => (
+        <TouchableOpacity
+          key={item.id}
+          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada?id=${item.id}`)}
+        >
+          <View style={recipeCardStyles.card}>
+            <Image source={item.imagem} style={recipeCardStyles.imagem} />
+            <View style={recipeCardStyles.conteudo}>
+              <Text style={recipeCardStyles.nome}>{item.nome}</Text>
+              <Text style={recipeCardStyles.descricao}>{item.descricao}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ))}
     </ScrollView>
   );
-}
-// Remove o header padrão do Expo Router
-export const options = {
-  headerShown: false,
 }

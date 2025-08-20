@@ -1,23 +1,48 @@
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
-import CategoryButton from "../../components/CategoryButton";
-import { categoryPageStyles as styles } from "../../styles/styles";
+import { categoryPageStyles, recipeCardStyles } from "../../styles/styles";
 
-export default function PratosPrincipais() {
+export default function ReceitasPratosPrincipais() {
   const router = useRouter();
 
-  return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Pratos Principais</Text>
-      <View style={styles.buttonContainer}>
-        <CategoryButton title="Feijoada" image={require("../../assets/images/img_pratos_principais/feijoada.png")} onPress={() => {}} />
-        <CategoryButton title="Moqueca" image={require("../../assets/images/img_pratos_principais/moqueca.png")} onPress={() => {}} />
-        <CategoryButton title="Churrasco" image={require("../../assets/images/img_pratos_principais/churrasco.png")} onPress={() => {}} />
-      </View>
+  const receitas = [
+    {
+      id: "feijoada",
+      nome: "Feijoada Completa",
+      imagem: require("../../assets/images/img_pratos_principais/feijoada.png"),
+      descricao: "Prato tradicional brasileiro à base de feijão preto e carnes.",
+    },
+    {
+      id: "moqueca",
+      nome: "Moqueca de Peixe",
+      imagem: require("../../assets/images/img_telas/comidas/Moqueca_peixe.jpg"),
+      descricao: "Deliciosa moqueca com peixe fresco e leite de coco.",
+    },
+    {
+      id: "churrasco",
+      nome: "Churrasco",
+      imagem: require("../../assets/images/img_pratos_principais/churrasco.png"),
+      descricao: "Carnes grelhadas ao estilo brasileiro.",
+    },
+  ];
 
-      <TouchableOpacity style={styles.backButton} onPress={() => router.push("/tabs/categorias")}>
-        <Text style={styles.backButtonText}>Voltar para Categorias</Text>
-      </TouchableOpacity>
+  return (
+    <ScrollView style={categoryPageStyles.container}>
+      <Text style={categoryPageStyles.title}>🍖 Pratos Principais</Text>
+      {receitas.map((item) => (
+        <TouchableOpacity
+          key={item.id}
+          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada?id=${item.id}`)}
+        >
+          <View style={recipeCardStyles.card}>
+            <Image source={item.imagem} style={recipeCardStyles.imagem} />
+            <View style={recipeCardStyles.conteudo}>
+              <Text style={recipeCardStyles.nome}>{item.nome}</Text>
+              <Text style={recipeCardStyles.descricao}>{item.descricao}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      ))}
     </ScrollView>
   );
 }

@@ -1,6 +1,6 @@
-import { ScrollView, Text, View, Image } from "react-native";
-import { tabScreenStyles as styles, carouselStyles as cStyles } from "../../styles/styles";
+import { Image, ScrollView, Text, View } from "react-native";
 import Swiper from "react-native-swiper";
+import { carouselStyles as cStyles, tabScreenStyles as styles } from "../../styles/styles";
 
 export default function Home() {
   const destaques = [
@@ -22,19 +22,20 @@ export default function Home() {
   ];
 
   const receitas = [
-    {
-      titulo: "Feijoada Completa",
-      imagem: "../../assets/images/img_pratos_principais/feijoada.png",
-    },
-    {
-      titulo: "Moqueca de Peixe",
-      imagem: "../../assets/images/img_telas/comidas/Moqueca_peixe.jpg",
-    },
-    {
-      titulo: "Pão de Queijo",
-      imagem: "../../assets/images/img_telas/comidas/Pão_de_Queijo.jpg",
-    },
-  ];
+  {
+    titulo: "Feijoada Completa",
+    imagem: require("../../assets/images/img_pratos_principais/feijoada.png"),
+  },
+  {
+    titulo: "Moqueca de Peixe",
+    imagem: require("../../assets/images/img_telas/comidas/Moqueca_peixe.jpg"),
+  },
+  {
+    titulo: "Pão de Queijo",
+    imagem: require("../../assets/images/img_telas/comidas/Pão_de_Queijo.jpg"),
+  },
+];
+
 
   return (
     <ScrollView style={styles.container}>
@@ -71,7 +72,6 @@ export default function Home() {
         {receitas.map((receita, index) => (
           <View key={index} style={{ width: "48%", marginBottom: 15 }}>
             <Image
-              source={{ uri: receita.imagem }}
               style={{ width: "100%", height: 120, borderRadius: 10 }}
             />
             <Text style={{ marginTop: 5, fontWeight: "600" }}>{receita.titulo}</Text>
