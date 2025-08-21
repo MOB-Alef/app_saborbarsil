@@ -1,21 +1,21 @@
-import { ScrollView, View, Text, Image } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import { categoryPageStyles, recipeCardStyles } from "../../styles/styles";
 
 export default function ReceitasBebidas() {
   const receitas = [
     {
       nome: "Feijoada",
-      imagem: "../../assets/images/img_telas/comidas/Feijoada_simples.jpg",
+      imagem: "/assets/images/img_telas/comidas/Feijoada_simples.jpg",
       descricao: "A bebida mais famosa do Brasil, feita com cachaça e limão.",
     },
     {
       nome: "Galinhada",
-      imagem: "../../assets/images/img_telas/comidas/galinhada.jpg",
+      imagem: "/assets/images/img_telas/comidas/galinhada.jpg",
       descricao: "Refrescante e energético, típico da região amazônica.",
     },
     {
       nome: "Monqueca Camarao",
-      imagem: "../../assets/images/img_telas/comidas/monquecacamarao.jpg",
+      imagem: "/assets/images/img_telas/comidas/monquecacamarao.jpg",
       descricao: "Forte e encorpado, conhecido mundialmente.",
     },
   ];

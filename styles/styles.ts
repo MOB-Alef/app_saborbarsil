@@ -210,3 +210,61 @@ export const modalStyles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+// --------------------
+// Perfil (aba de usuário)
+// --------------------
+export const perfilStyles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: COLORS.branco },
+  header: { paddingHorizontal: 16, paddingTop: 16, paddingBottom: 8, alignItems: "center" },
+  headerTitle: { fontSize: 24, fontWeight: "bold", color: COLORS.preto },
+  logo: { width: 30, height: 50, resizeMode: "contain", position: "absolute", right: 20, top: 16 },
+  listContainer: { borderTopWidth: 1, borderColor: "#e5e7eb" },
+  listItem: {
+    paddingVertical: 17,
+    paddingHorizontal: 16,
+    borderBottomWidth: 1,
+    borderColor: "#e5e7eb",
+    backgroundColor: COLORS.branco,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  listItemLast: { borderBottomWidth: 0 },
+  itemTextContainer: { flex: 1, paddingRight: 12 },
+  itemTitle: { fontSize: 16, fontWeight: "bold", color: COLORS.preto },
+  itemDescription: { fontSize: 14, color: "#555", marginTop: 4 },
+  arrow: { fontSize: 18, color: "#555" },
+});
+
+// --------------------
+// Receitas (geral)
+// --------------------
+export const receitasStyles = StyleSheet.create({
+  container: { flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: COLORS.branco, padding: 20 },
+  title: { fontSize: 22, fontWeight: "bold", marginBottom: 10, color: COLORS.preto },
+  description: { fontSize: 16, color: COLORS.cinzaEscuro, textAlign: "center" },
+});
+
+// --------------------
+// Assinatura
+// --------------------
+export const assinaturaStyles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: COLORS.branco, paddingBottom: 24 },
+  header: { flexDirection: "row", alignItems: "center", padding: 16 },
+  backButton: { fontSize: 24 },
+  headerTitle: { flex: 1, textAlign: "center", fontSize: 20, fontWeight: "bold", color: COLORS.preto },
+  spacer: { width: 24 },
+  benefitsContainer: { marginHorizontal: 16, backgroundColor: "#f7d86c", borderRadius: 8, padding: 16, marginBottom: 16 },
+  benefitText: { fontSize: 16, marginVertical: 4 },
+  trialContainer: { alignItems: "center", marginBottom: 16 },
+  trialButton: { backgroundColor: "#88c053", paddingHorizontal: 24, paddingVertical: 8, borderRadius: 20 },
+  trialText: { color: COLORS.branco, fontWeight: "bold" },
+  plansContainer: { flexDirection: "row", justifyContent: "space-around", marginBottom: 16 },
+  planButton: { borderWidth: 1, borderColor: "#88c053", borderRadius: 8, padding: 16, width: "45%" },
+  planTitle: { fontWeight: "bold", marginBottom: 4, color: "#88c053" },
+  planDescription: { fontWeight: "bold" },
+  planPrice: { color: "#555", marginTop: 4 },
+  subscribeButton: { backgroundColor: "#88c053", borderRadius: 8, paddingVertical: 16, alignItems: "center", marginHorizontal: 16 },
+  subscribeText: { color: COLORS.branco, fontWeight: "bold", fontSize: 16 },
+});

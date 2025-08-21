@@ -32,7 +32,7 @@ export default function ReceitasSobremesas() {
       {receitas.map((item) => (
         <TouchableOpacity
           key={item.id}
-          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada?id=${item.id}`)}
+          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada_sobremesas?id=${item.id}`)}
         >
           <View style={recipeCardStyles.card}>
             <Image source={item.imagem} style={recipeCardStyles.imagem} />

@@ -5,17 +5,17 @@ export default function ReceitasBebidas() {
   const receitas = [
     {
       nome: "Pudim",
-      imagem: "https://picsum.photos/400/200?random=16",
+      imagem: "/assets/images/img_sobremesas/pudim.png",
       descricao: "A bebida mais famosa do Brasil, feita com cachaça e limão.",
     },
     {
-      nome: "Suco de Açaí",
-      imagem: "../../assets/images/img_telas/comidas/",
+      nome: "Suco de Abacaxi",
+      imagem: "/assets/images/img_bebidas/suco_abacaxi.jpg",
       descricao: "Refrescante e energético, típico da região amazônica.",
     },
     {
       nome: "Café Brasileiro",
-      imagem: "https://picsum.photos/400/200?random=18",
+      imagem: "/assets/images/img_telas/comidas/Café_Brasileiro.jpg",
       descricao: "Forte e encorpado, conhecido mundialmente.",
     },
   ];
