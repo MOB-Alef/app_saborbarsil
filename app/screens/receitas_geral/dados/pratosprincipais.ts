@@ -1,7 +1,7 @@
 export const pratosPrincipais = {
   feijoada: {
     nome: "Feijoada Completa",
-    imagem: require("../../../../assets/images/img_pratos_principais/feijoada.png"),
+    imagem: require("../../../../assets/images/img_telas/comidas/feijoada-Completa.jpg"),
     descricao: "Prato tradicional brasileiro à base de feijão preto e carnes.",
     ingredientes: [
       { nome: "Feijão preto", quantidade: "500g" },

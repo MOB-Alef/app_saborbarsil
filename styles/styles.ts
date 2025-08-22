@@ -94,15 +94,18 @@ export const categoryPageStyles = StyleSheet.create({
 // --------------------
 export const recipeCardStyles = StyleSheet.create({
   card: {
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#fef5d9", // bege da receita
     borderRadius: 12,
     marginBottom: 16,
-    overflow: "hidden",
-    elevation: 3,
+    padding: 0, // removi padding pq teremos conteudo separado
+    borderWidth: 1,
+    borderColor: "#fef5d9",
     shadowColor: "#000",
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.15,
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
+    shadowRadius: 3,
+    elevation: 2,
+    overflow: "hidden", // garante que imagem respeite borda arredondada
   },
   imagem: {
     width: "100%",
@@ -120,6 +123,43 @@ export const recipeCardStyles = StyleSheet.create({
   descricao: {
     fontSize: 14,
     color: COLORS.cinzaEscuro,
+  },
+
+  // --- Mantive os estilos extras que já existiam ---
+  titulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: COLORS.preto,
+    marginBottom: 12,
+  },
+  subtitulo: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: COLORS.marromAvermelhado,
+    marginTop: 10,
+    marginBottom: 6,
+  },
+  listaItem: {
+    fontSize: 14,
+    color: COLORS.preto,
+    marginBottom: 4,
+  },
+  icone: {
+    fontSize: 16,
+    marginRight: 6,
+  },
+  secao: {
+    marginBottom: 12,
+  },
+  modoPreparoPasso: {
+    fontSize: 14,
+    color: COLORS.cinzaEscuro,
+    marginBottom: 6,
+    lineHeight: 20,
+  },
+  destaque: {
+    fontWeight: "bold",
+    color: COLORS.marromAvermelhado,
   },
 });
 
@@ -267,4 +307,61 @@ export const assinaturaStyles = StyleSheet.create({
   planPrice: { color: "#555", marginTop: 4 },
   subscribeButton: { backgroundColor: "#88c053", borderRadius: 8, paddingVertical: 16, alignItems: "center", marginHorizontal: 16 },
   subscribeText: { color: COLORS.branco, fontWeight: "bold", fontSize: 16 },
+});
+// --------------------
+// Detalhes das Receitas (ingredientes e preparo)
+// --------------------
+export const receitaDetalheStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.branco,
+    padding: 16,
+  },
+  card: {
+    backgroundColor: "#fef5d9", // bege igual ao da imagem
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: "#fef5d9",
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 3,
+    elevation: 2,
+  },
+  titulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: COLORS.laranjaQueimado,
+    marginBottom: 10,
+    flexDirection: "row",
+  },
+  subtitulo: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: COLORS.marromAvermelhado,
+    marginBottom: 8,
+  },
+  listaItem: {
+    fontSize: 15,
+    color: COLORS.preto,
+    marginBottom: 6,
+    lineHeight: 22,
+  },
+  bullet: {
+    marginRight: 6,
+    fontSize: 16,
+    color: COLORS.preto,
+  },
+  passo: {
+    fontSize: 15,
+    color: COLORS.cinzaEscuro,
+    marginBottom: 8,
+    lineHeight: 22,
+  },
+  destaque: {
+    fontWeight: "bold",
+    color: COLORS.laranjaQueimado,
+  },
 });

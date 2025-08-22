@@ -22,23 +22,23 @@ export default function Home() {
   ];
 
   const receitas = [
-  {
-    titulo: "Feijoada Completa",
-    imagem: require("../../assets/images/img_pratos_principais/feijoada.png"),
-  },
-  {
-    titulo: "Moqueca de Peixe",
-    imagem: require("../../assets/images/img_telas/comidas/Moqueca_peixe.jpg"),
-  },
-  {
-    titulo: "Pão de Queijo",
-    imagem: require("../../assets/images/img_telas/comidas/Pão_de_Queijo.jpg"),
-  },
-];
-
+    {
+      titulo: "Feijoada Completa",
+      imagem: require("../../assets/images/img_telas/comidas/feijoada-Completa.jpg"),
+    },
+    {
+      titulo: "Moqueca de Peixe",
+      imagem: require("../../assets/images/img_telas/comidas/Moqueca_peixe.jpg"),
+    },
+    {
+      titulo: "Pão de Queijo",
+      imagem: require("../../assets/images/img_telas/comidas/Pão_de_Queijo.jpg"),
+    },
+  ];
 
   return (
     <ScrollView style={styles.container}>
+      {/* Título das Receitas em Destaque */}
       <Text style={{ fontSize: 22, fontWeight: "bold", marginBottom: 10 }}>
         🍲 Receitas em Destaque
       </Text>
@@ -72,6 +72,7 @@ export default function Home() {
         {receitas.map((receita, index) => (
           <View key={index} style={{ width: "48%", marginBottom: 15 }}>
             <Image
+              source={receita.imagem}
               style={{ width: "100%", height: 120, borderRadius: 10 }}
             />
             <Text style={{ marginTop: 5, fontWeight: "600" }}>{receita.titulo}</Text>
