@@ -1,7 +1,7 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { receitaDetalheStyles, categoryPageStyles } from "../../../styles/styles";
-import { pratosPrincipais } from "./dados/pratosprincipais";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { categoryPageStyles, receitaDetalheStyles } from "../../../styles/styles";
+import { pratosPrincipais } from "../../dados/pratosprincipais";
 
 export default function ReceitaDetalhadaPratosPrincipais() {
   const router = useRouter();

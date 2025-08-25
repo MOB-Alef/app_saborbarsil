@@ -24,6 +24,18 @@ export default function ReceitasSobremesas() {
       imagem: require("../../assets/images/img_sobremesas/torta_limao.png"),
       descricao: "Torta cítrica e refrescante, perfeita para sobremesa.",
     },
+    {
+      id: "brigadeiro",
+      nome: "Brigadeiro",
+      imagem: require("../../assets/images/img_sobremesas/Brigadeiro.jpg"),
+      descricao: "Docinho de chocolate, coberto com granulado.",
+    },
+    {
+      id: "cocada",
+      nome: "Cocada",
+      imagem: require("../../assets/images/img_sobremesas/Cocada.png"),
+      descricao: "Sobremesa de coco com gema de ovo, doce e cremoso.",
+    },
   ];
 
   return (
@@ -32,8 +44,7 @@ export default function ReceitasSobremesas() {
       {receitas.map((item) => (
         <TouchableOpacity
           key={item.id}
-          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada_sobremesas?id=${item.id}`)}
-        >
+          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada_sobremesas?id=${item.id}`)}>
           <View style={recipeCardStyles.card}>
             <Image source={item.imagem} style={recipeCardStyles.imagem} />
             <View style={recipeCardStyles.conteudo}>

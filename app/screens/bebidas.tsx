@@ -13,16 +13,28 @@ export default function ReceitasBebidas() {
       descricao: "Bebida típica do Brasil feita com limão e cachaça.",
     },
     {
-      id: "suco_acai",
-      nome: "Suco de Açaí",
-      imagem: require("../../assets/images/img_telas/comidas/Suco_de_Açaí.jpg"),
-      descricao: "Refrescante e energético, típico da região amazônica.",
+      id: "pinaColada",
+      nome: "Piña Colada",
+      imagem: require("../../assets/images/img_bebidas/Piña_Colada.png"),
+      descricao: "Coquetel tropical de rum, abacaxi e leite de coco.",
     },
     {
-      id: "cafe",
-      nome: "Café Brasileiro",
-      imagem: require("../../assets/images/img_telas/comidas/Café_Brasileiro.jpg"),
+      id: "cosmopolitan",
+      nome: "Cosmopolitan",
+      imagem: require("../../assets/images/img_bebidas/Cosmopolitan.png"),
       descricao: "Forte e encorpado, conhecido mundialmente.",
+    },
+    {
+      id: "margarita",
+      nome: "Margarita",
+      imagem: require("../../assets/images/img_bebidas/Margarita.jpg"),
+      descricao: "Clássico coquetel mexicano com tequila e limão.",
+    },
+    {
+      id: "mojito",
+      nome: "Mojito",
+      imagem: require("../../assets/images/img_bebidas/Mojito.png"),
+      descricao: "Refrescante coquetel cubano com hortelã e limão.",
     },
   ];
 
@@ -32,8 +44,7 @@ export default function ReceitasBebidas() {
       {receitas.map((item) => (
         <TouchableOpacity
           key={item.id}
-          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada_bebidas?id=${item.id}`)}
-        >
+          onPress={() => router.push(`/screens/receitas_geral/ReceitaDetalhada_bebidas?id=${item.id}`)}>
           <View style={recipeCardStyles.card}>
             <Image source={item.imagem} style={recipeCardStyles.imagem} />
             <View style={recipeCardStyles.conteudo}>
@@ -41,7 +52,8 @@ export default function ReceitasBebidas() {
               <Text style={recipeCardStyles.descricao}>{item.descricao}</Text>
             </View>
           </View>
-        </TouchableOpacity>
+        <Text style={categoryPageStyles.backButtonText}>Voltar</Text>
+      </TouchableOpacity>
       ))}
     </ScrollView>
   );

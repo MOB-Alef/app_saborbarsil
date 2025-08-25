@@ -1,7 +1,7 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { receitaDetalheStyles, categoryPageStyles } from "../../../styles/styles";
-import { sobremesas } from "./dados/sobremesas";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { categoryPageStyles, receitaDetalheStyles } from "../../../styles/styles";
+import { sobremesas } from "../../dados/sobremesas";
 
 export default function ReceitaDetalhadaSobremesas() {
   const router = useRouter();
@@ -19,9 +19,37 @@ export default function ReceitaDetalhadaSobremesas() {
 
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView style={receitaDetalheStyles.container} contentContainerStyle={{ paddingBottom: 80 }}>
-        <Image source={receita.imagem} style={{ width: "100%", height: 200, borderRadius: 12, marginBottom: 16 }} />
-        <Text style={receitaDetalheStyles.titulo}>{receita.nome}</Text>
+      {/* Título da receita no topo */}
+      <View
+        style={{
+          margin: 25 ,
+          padding: 16,
+          backgroundColor: "#d9c4a1",
+          borderRadius: 20,
+          marginBottom: 16,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 22,
+            fontWeight: "bold",
+            color: "#8c3b00",
+            textAlign: "center",
+          }}
+        >
+          {receita.nome}
+        </Text>
+      </View>
+
+      {/* Conteúdo da receita */}
+      <ScrollView
+        style={receitaDetalheStyles.container}
+        contentContainerStyle={{ paddingBottom: 80, paddingTop: 16 }}
+      >
+        <Image
+          source={receita.imagem}
+          style={{ width: "100%", height: 200, borderRadius: 12, marginBottom: 16 }}
+        />
 
         <Text style={receitaDetalheStyles.subtitulo}>Ingredientes</Text>
         <View style={receitaDetalheStyles.card}>
@@ -38,6 +66,7 @@ export default function ReceitaDetalhadaSobremesas() {
         </View>
       </ScrollView>
 
+      {/* Botão voltar fixo na parte inferior */}
       <TouchableOpacity
         style={[categoryPageStyles.backButton, { position: "absolute", bottom: 16, left: 16, right: 16 }]}
         onPress={() => router.back()}

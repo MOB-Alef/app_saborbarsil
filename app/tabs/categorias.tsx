@@ -11,12 +11,12 @@ export default function Categorias() {
       <View style={styles.buttonContainer}>
         <CategoryButton
           title="Bebidas"
-          image={require("../../assets/images/img_bebidas/cafe.jpg")}
+          image={require("../../assets/images/img_bebidas/Blood_Mary.png")}
           onPress={() => router.push("/screens/bebidas")}
         />
         <CategoryButton
           title="Pratos Principais"
-          image={require("../../assets/images/img_pratos_principais/pizza.jpg")}
+          image={require("../../assets/images/img_pratos_principais/Moqueca_peixe.jpg")}
           onPress={() => router.push("/screens/pratosprincipais")}
         />
         <CategoryButton
