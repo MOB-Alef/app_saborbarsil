@@ -22,7 +22,7 @@ export default function ReceitaDetalhadaSobremesas() {
       {/* Título da receita no topo */}
       <View
         style={{
-          margin: 25 ,
+          margin: 26 ,
           padding: 16,
           backgroundColor: "#d9c4a1",
           borderRadius: 20,
