@@ -1,3 +1,4 @@
+
 export const sobremesas = {
   pudim: {
     nome: "Pudim",
@@ -95,4 +96,3 @@ export const sobremesas = {
     preparo: "Misture todos os ingredientes, leve ao forno médio por 35-40 minutos. Deixe esfriar antes de servir.",
   },
 };
-

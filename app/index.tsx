@@ -1,8 +1,8 @@
-import { View, Text, TouchableOpacity, Modal } from "react-native";
-import { useState } from "react";
 import { useRouter } from "expo-router";
+import { useState } from "react";
+import { Modal, Text, TouchableOpacity, View } from "react-native";
 // --- CORREÇÃO 1: Importar ambos os conjuntos de estilos ---
-import { splashStyles, modalStyles } from "../styles/styles";
+import { modalStyles, splashStyles } from "../styles/styles";
 
 export default function Welcome() {
   const router = useRouter();

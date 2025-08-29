@@ -1,3 +1,5 @@
+// bebidas.ts
+import React from "react";
 export const bebidas = {
   caipirinha: {
     nome: "Caipirinha",
